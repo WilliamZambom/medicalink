@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicalink - Assistente Médico para Estudantes e Pesquisadores</title>
+    <meta name="description" content="Plataforma segura de IA médica para estudantes e pesquisadores da área da saúde. Chatbot inteligente para apoio ao aprendizado e pesquisa médica.">
+    <meta name="author" content="Medicalink">
+    <meta name="keywords" content="IA médica, chatbot saúde, educação médica, pesquisa médica, estudantes medicina">
+
+    <meta property="og:title" content="Medicalink - Assistente Médico Inteligente">
+    <meta property="og:description" content="Plataforma segura de IA médica para estudantes e pesquisadores da área da saúde.">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <link rel="stylesheet" href="static/style.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-content">
+                <!-- Logo -->
+                <div class="navbar-logo">
+                    <div class="logo-icon">
+                        <i data-lucide="heart"></i>
+                    </div>
+                    <h1 class="logo-text">Medicalink</h1>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="navbar-desktop">
+                    <a href="#sobre" class="nav-link">Sobre</a>
+                    <a href="#artigos" class="nav-link">Artigos</a>
+                    <a href="#contatos" class="nav-link">Contatos</a>
+                    <button class="btn btn-outline login-btn" onclick="handleLogin()">Fazer Login</button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="navbar-mobile-btn">
+                    <button class="btn btn-ghost mobile-menu-toggle" onclick="toggleMobileMenu()">
+                        <i data-lucide="menu" class="menu-icon"></i>
+                        <i data-lucide="x" class="close-icon" style="display: none;"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="navbar-mobile" id="mobileMenu" style="display: none;">
+                <div class="mobile-menu-content">
+                    <a href="#sobre" class="mobile-nav-link" onclick="closeMobileMenu()">Sobre</a>
+                    <a href="#artigos" class="mobile-nav-link" onclick="closeMobileMenu()">Artigos</a>
+                    <a href="#contatos" class="mobile-nav-link" onclick="closeMobileMenu()">Contatos</a>
+                    <div class="mobile-login">
+                        <button class="btn btn-outline login-btn-mobile" onclick="handleLogin()">Fazer Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Search Section -->
+        <div class="search-section">
+            <h1 class="main-title">Bem-vindo ao Medicalink!</h1>
+            <p class="main-description">
+                Use a barra de pesquisa abaixo para explorar conhecimentos científicos com IA.
+                Uma plataforma segura para estudantes e pesquisadores da área da saúde.
+            </p>
+            
+            <form class="search-form" onsubmit="handleSearch(event)">
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <i data-lucide="search" class="search-icon"></i>
+                        <input
+                            type="text"
+                            placeholder="Pesquise aqui..."
+                            class="search-input"
+                            id="searchInput"
+                        >
+                    </div>
+                    <button type="submit" class="btn btn-primary search-btn">
+                        Pesquisar
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Popular Articles -->
+        <div class="articles-section">
+            <div class="articles-container">
+                <h2 class="articles-title">Artigos Populares</h2>
+                
+                <div class="articles-grid">
+                    <!-- Article 1 -->
+                    <div class="article-card">
+                        <div class="article-header">
+                            <div class="article-icon">
+                                <i data-lucide="heart"></i>
+                            </div>
+                            <h3 class="article-title">Artigo 1</h3>
+                        </div>
+                        <div class="article-content">
+                            <p class="article-description">
+                                Pesquisa sobre novos tratamentos em cardiologia
+                            </p>
+                            <div class="article-footer">
+                                <span class="read-time">5 min</span>
+                                <button class="btn btn-ghost read-more-btn" onclick="handleReadMore()">
+                                    Ler mais
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article 2 -->
+                    <div class="article-card">
+                        <div class="article-header">
+                            <div class="article-icon">
+                                <i data-lucide="book-open"></i>
+                            </div>
+                            <h3 class="article-title">Artigo 2</h3>
+                        </div>
+                        <div class="article-content">
+                            <p class="article-description">
+                                Estudos recentes em medicina preventiva
+                            </p>
+                            <div class="article-footer">
+                                <span class="read-time">8 min</span>
+                                <button class="btn btn-ghost read-more-btn" onclick="handleReadMore()">
+                                    Ler mais
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article 3 -->
+                    <div class="article-card">
+                        <div class="article-header">
+                            <div class="article-icon">
+                                <i data-lucide="users"></i>
+                            </div>
+                            <h3 class="article-title">Artigo 3</h3>
+                        </div>
+                        <div class="article-content">
+                            <p class="article-description">
+                                Colaboração em pesquisas multidisciplinares
+                            </p>
+                            <div class="article-footer">
+                                <span class="read-time">6 min</span>
+                                <button class="btn btn-ghost read-more-btn" onclick="handleReadMore()">
+                                    Ler mais
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>          
+        </div>
+    </div>
+
+    <script src="static/script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
