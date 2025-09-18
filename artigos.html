@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicalink - Assistente Médico Virtual</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <i class="fas fa-stethoscope"></i>
+                    <span>Medicalink</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Início</a>
+                <a href="index.html" class="nav-link">Sobre</a>
+                <a href="index.html" class="nav-link">Recursos</a>
+                <a href="artigos.html" class="nav-link active">Artigos</a>
+                <a href="medicalinkai.html" class="nav-link cta-button">Iniciar Chat</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Artigos -->
+    <main id="artigos" class="articles">
+        <section class="hero">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Busca de Artigos</h2>
+                    <p>Pesquise publicações científicas, revisões e estudos clínicos</p>
+                </div>
+                <div class="chat-input-wrapper search-wrapper">
+                    <input id="searchInput" type="text" placeholder="Buscar em artigos médicos, doenças, tratamentos..." class="search-input" />
+                    <button id="searchBtn" class="btn btn-primary search-btn">
+                        <i class="fas fa-search"></i>
+                        Buscar
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="about filters-section">
+            <div class="container">
+                <hr />
+
+                <div class="section-header">
+                    <h2>Filtrar por:</h2>
+                </div>
+
+                <div class="filters-grid">
+                    <div class="feature-card filter-card">
+                        <label for="f-publico" class="filter-label">Público-Alvo</label>
+                        <select id="f-publico" class="filter-select">
+                            <option>Todos</option>
+                            <option>Pesquisadores</option>
+                            <option>Estudantes</option>
+                        </select>
+                    </div>
+                    <div class="feature-card filter-card">
+                        <label for="f-ano" class="filter-label">Ano de Publicação</label>
+                        <select id="f-ano" class="filter-select">
+                            <option>Todos</option>
+                            <option>2024</option>
+                            <option>2023</option>
+                            <option>2022</option>
+                        </select>
+                    </div>
+                    <div class="feature-card filter-card">
+                        <label for="f-especialidade" class="filter-label">Especialidade</label>
+                        <select id="f-especialidade" class="filter-select">
+                            <option>Todas</option>
+                            <option>Cardiologia</option>
+                            <option>Neurologia</option>
+                            <option>Pediatria</option>
+                        </select>
+                    </div>
+                    <div class="feature-card filter-card">
+                        <label for="f-tipo" class="filter-label">Tipo de Estudo</label>
+                        <select id="f-tipo" class="filter-select">
+                            <option>Todos</option>
+                            <option>Ensaio Clínico</option>
+                            <option>Revisão Sistemática</option>
+                            <option>Meta-análise</option>
+                        </select>
+                    </div>
+                    <div class="feature-card filter-card">
+                        <label for="f-universidade" class="filter-label">Universidade/Instituição</label>
+                        <select id="f-universidade" class="filter-select">
+                            <option>Todas</option>
+                            <option>USP</option>
+                            <option>Harvard</option>
+                            <option>Oxford</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="apply-filters-container">
+                    <button class="btn btn-outline" id="applyFiltersBtn">
+                        <i class="fas fa-filter"></i>
+                        Aplicar Filtros
+                    </button>
+                </div>
+
+                <!-- Estado vazio (oculto por padrão) -->
+                <div id="emptyState" class="empty-state">
+                    Nenhum artigo encontrado. Tente ajustar os termos da sua busca ou os filtros.
+                </div>
+
+                <!-- Lista de Artigos -->
+                <div id="articlesList" class="articles-list">
+                    <!-- Artigo 1 -->
+                    <article class="article-card">
+                        <img src="images/logos/vacina.webp" alt="Miniatura do artigo" class="article-thumbnail" />
+                        <div class="article-content">
+                            <h3 class="article-title">
+                                Eficácia da Vacina ExemploVac contra variantes da Covid-19
+                            </h3>
+                            <div class="article-meta">
+                                <i class="fas fa-bookmark"></i>
+                                The New England Journal of Medicine
+                                <i class="far fa-calendar"></i> 2023
+                                <i class="fas fa-user-md"></i> Silva, A. et al.
+                            </div>
+                            <p class="article-abstract">
+                                Um estudo randomizado controlado demonstrou que a ExemploVac possui uma eficácia de 95% contra casos graves da variante Ômicron após a dose de reforço.
+                            </p>
+                            <div class="article-highlights">
+                                <span>🔒 Livremente disponível</span>
+                                <span>🌟 120 Citações</span>
+                            </div>
+                            <div class="article-footer">
+                                <small class="article-doi">DOI: 10.1056/NEJMoa2201234</small>
+                                <a class="btn btn-primary article-read-more" href="artigo-detalhe.html?id=1">
+                                    Leia Mais
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>   
+                    </article>
+
+                    <!-- Artigo 2 -->
+                    <article class="article-card">
+                        <img src="images/logos/vacina2.jpeg" alt="Miniatura do artigo" class="article-thumbnail" />
+                        <div class="article-content">
+                            <h3 class="article-title">
+                                Efetividade da vacina CoronaVac contra casos graves de COVID-19 em população idosa.
+                            </h3>
+                            <div class="article-meta">
+                                <i class="fas fa-bookmark"></i>
+                                The New England Journal of Medicine
+                                <i class="far fa-calendar"></i> 2022
+                                <i class="fas fa-user-md"></i> Silva, A.; Souza, B.; Lima, C.
+                            </div>
+                            <p class="article-abstract">
+                                Análise de subgrupos mostrou manutenção de proteção elevada em idosos após reforço de CoronaVac.
+                            </p>
+                            <div class="article-highlights">
+                                <span>🔒 Livremente disponível</span>
+                                <span>🌟 85 Citações</span>
+                            </div>
+                            <div class="article-footer">
+                                <small class="article-doi">DOI: 10.1056/NEJMoa2205678</small>
+                                <a class="btn btn-primary article-read-more" href="artigo-detalhe.html?id=2">
+                                    Leia Mais
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Artigo 3 -->
+                    <article class="article-card">
+                        <img src="images/logos/vacina3.jpg" alt="Miniatura do artigo" class="article-thumbnail" />
+                        <div class="article-content">
+                            <h3 class="article-title">
+                                Eficácia da Vacina ExemploVac contra variantes da Covid-19
+                            </h3>
+                            <div class="article-meta">
+                                <i class="fas fa-bookmark"></i>
+                                The New England Journal of Medicine
+                                <i class="far fa-calendar"></i> 2024
+                                <i class="fas fa-user-md"></i> Almeida, R.; Silva, A.; et al.
+                            </div>
+                            <p class="article-abstract">
+                                Revisão sistemática com meta-análise indica efetividade sustentada da ExemploVac contra hospitalização por sublinhagens de Ômicron.
+                            </p>
+                            <div class="article-highlights">
+                                <span>🔒 Livremente disponível</span>
+                                <span>🌟 42 Citações</span>
+                            </div>
+                            <div class="article-footer">
+                                <small class="article-doi">DOI: 10.1056/NEJMoa2400123</small>
+                                <a class="btn btn-primary article-read-more" href="artigo-detalhe.html?id=3">
+                                    Leia Mais
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-stethoscope"></i>
+                    <span>Medicalink</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#privacy">Privacidade</a>
+                    <a href="#terms">Termos</a>
+                    <a href="#contact">Contato</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Medicalink. Todos os direitos reservados.</p>
+                <p class="disclaimer-text">
+                    Este sistema é apenas para fins educacionais e não substitui consulta médica profissional.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="static/script.js"></script>
+</body>
+</html>
+
+
